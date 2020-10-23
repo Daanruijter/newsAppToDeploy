@@ -39,7 +39,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx", "src/routes.js", "vue.config.js",
-    "./src/main.ts"
+
 
   ],
   "exclude": [
