@@ -11,15 +11,15 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/", require("./worldNewsUrls.ts"));
-
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log("Server is running on " + port + "port");
 });
 
+app.use("/", require("./worldNewsUrls.ts"));
+
 //Handle production
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
   console.log("handle this");
   //Static folder
   app.use(express.static(__dirname, +"/public"));
