@@ -19,7 +19,8 @@ app.listen(port, () => {
 });
 
 //Handle production
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
+  console.log("handle this");
   //Static folder
   app.use(express.static(__dirname, +"/public"));
 
