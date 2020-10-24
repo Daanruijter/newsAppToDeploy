@@ -1,14 +1,18 @@
 {
   "name": "worldnews-app",
-  "version": "1.0.0",
-  "description": "world news app",
-  "main": "server.js",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.ts",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "sitemap": "vue-cli-service sitemap",
+    "start": "node ./server/server.js",
+    "dev": "nodemon ./server/server.js"
   },
-  "author": "Daan",
-  "license": "none",
   "dependencies": {
     "@types/filesystem": "0.0.29",
     "axios": "^0.20.0",
