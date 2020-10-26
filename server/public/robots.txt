@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-./server/public/sitemap.xml
+./dist/static/sitemap.xml
