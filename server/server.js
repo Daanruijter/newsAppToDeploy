@@ -20,7 +20,7 @@ app.use("/", require("./worldNewsUrls.ts"));
 
 //Handle production
 // if (process.env.NODE_ENV === "production") {
-console.log("handle this");
+console.log("handlethis");
 //Static folder
 app.use(express.static(__dirname, +"/public"));
 
