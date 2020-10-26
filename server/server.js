@@ -19,14 +19,14 @@ app.listen(port, () => {
 app.use("/", require("./worldNewsUrls.ts"));
 
 //Handle production
-// if (process.env.NODE_ENV === "production") {
-console.log("handlethis");
-//Static folder
-app.use(express.static(__dirname, +"/public"));
+if (process.env.NODE_ENV === "production") {
+  console.log("handlethis");
+  //Static folder
+  app.use(express.static(__dirname, +"/public"));
 
-//Handle Single Page Application
-app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
-// }
+  //Handle Single Page Application
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+}
 
 //Connect to MongoDB
 const db =
