@@ -22,7 +22,7 @@ app.use("/", require("./worldNewsUrls.ts"));
 if (process.env.NODE_ENV === "production") {
   console.log("handlethis");
   //Static folder
-  app.use(express.static(path.join(__dirname, +"/public")));
+  app.use(express.static(__dirname, +"/public"));
 
   //Handle Single Page Application
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
