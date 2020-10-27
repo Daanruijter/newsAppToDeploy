@@ -22,12 +22,12 @@ app.use("/", require("./worldNewsUrls.js"));
 if (process.env.NODE_ENV === "production") {
   console.log("handlethis");
   //Static folder
-  app.use(express.static(__dirname, +"/public/"));
+  app.use(express.static(__dirname, +"/dist/"));
 
   // app.use(express.static(path.join(__dirname, "server", "public")));
 
   //Handle Single Page Application
-  // app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/dist/index.html"));
 }
 
 //Connect to MongoDB
