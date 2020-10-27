@@ -11,16 +11,16 @@
  * See https://goo.gl/2aRDsh
  */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
 importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
+  "/precache-manifest.161ce2dcc66bd393bb343a2a9679917d.js"
 );
 
-importScripts("/precache-manifest.68db07956e650a026c7fc68cd58cf211.js");
+workbox.core.setCacheNameDetails({prefix: "worldnews-app"});
 
-workbox.core.setCacheNameDetails({ prefix: "worldnews-app" });
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
