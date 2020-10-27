@@ -16,15 +16,15 @@ app.listen(port, () => {
   console.log("Server is running on " + port + "port");
 });
 
-app.use("/", require("./worldNewsUrls.ts"));
+app.use("/", require("./worldNewsUrls.js"));
 
-//Handle production
+//Handle productionnpm fund
 if (process.env.NODE_ENV === "production") {
   console.log("handlethis");
   //Static folder
-  app.use(express.static(__dirname, +"/public/worldnews-apptest"));
+  app.use(express.static(__dirname, +"/public/"));
 
-  app.use(express.static(path.join(__dirname, "server", "public")));
+  // app.use(express.static(path.join(__dirname, "server", "public")));
 
   //Handle Single Page Application
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
