@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
 
@@ -22,10 +22,10 @@ app.use("/", require("./worldNewsUrls.ts"));
 if (process.env.NODE_ENV === "production") {
   console.log("handlethis");
   //Static folder
-  app.use(express.static(__dirname, +"/public"));
+  app.use(express.static(path.join(__dirname, +"/public")));
 
   //Handle Single Page Application
-  app.get("*", (req, res) => res.sendFile(__dirname + "/public/index.html"));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
 }
 
 //Connect to MongoDB
