@@ -2,7 +2,7 @@
   "name": "worldnews-app",
   "version": "1.0.0",
   "description": "world news app",
-  "main": "server.js",
+  "main": "index.html",
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js"
