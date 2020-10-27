@@ -17,7 +17,7 @@ importScripts(
 
 importScripts("/precache-manifest.68db07956e650a026c7fc68cd58cf211.js");
 
-workbox.core.setCacheNameDetails({ prefix: "worldnews-apptest" });
+workbox.core.setCacheNameDetails({ prefix: "worldnews-app" });
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
