@@ -412,6 +412,7 @@ router.post("/updateXMLSitemap", (req, res) => {
         res.send(err);
         throw err;
       }
+      res.send("sitemap XML file updated");
     });
   }
 });
