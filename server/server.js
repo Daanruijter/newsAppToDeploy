@@ -16,7 +16,7 @@ app.use(cors());
 if (process.env.NODE_ENV === "production") {
   console.log("handslethis");
   //Static folder
-  app.use(express.static("/public/"));
+  app.use(express.static(__dirname + "public"));
 
   app.use("/", require("./worldNewsUrls.js"));
   // app.use(serveStatic(path.join(__dirname, "/public")));
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
   // });
 
   //Handle Single Page Application
-  app.get(/.*/, (req, res) => res.sendFile("/public/index.html"));
+  app.get(/.*/, (req, res) => res.sendFile(__dirname +"public/index.html")));
 }
 
 app.listen(port, () => {
