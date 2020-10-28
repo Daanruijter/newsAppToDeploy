@@ -386,6 +386,8 @@ router.post("/api", (req, res) => {
 
 //Update the xml sitemap
 router.post("/updateXMLSitemap", (req, res) => {
+  console.log("UPDATE SITEMAP");
+
   const XMLData =
     '<?xml version="1.0" encoding="UTF-8"?>' +
     req.body.XMLDataAndEnvironMentData.urlSetToSend;
@@ -403,6 +405,7 @@ router.post("/updateXMLSitemap", (req, res) => {
 
   // Write updated XML string to the sitemap
   if (req.body.XMLDataAndEnvironMentData.environmentData === "production") {
+    console.log("WRTIEFILE");
     fs.writeFile("sitemap.xml", XMLData, (err) => {
       if (err) {
         console.log(err);
