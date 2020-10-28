@@ -11,18 +11,13 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log("Server is running on " + port + "port");
-});
-
 app.use("/", require("./worldNewsUrls.js"));
 
 //Handle production
 if (process.env.NODE_ENV === "production") {
   console.log("handslethis");
   //Static folder
-  app.use("/", express.static(__dirname, +"/public/"));
+  app.use(express.static(__dirname, +"/public/"));
 
   // app.use(serveStatic(path.join(__dirname, "/public")));
 
@@ -38,6 +33,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname + "/public/index.html"))
   );
 }
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log("Server is running on " + port + "port");
+});
 
 //Connect to MongoDB (maybe using this Mongo connection later on)
 const db =
