@@ -17,8 +17,8 @@ if (process.env.NODE_ENV === "production") {
   //Static folder
   app.use(express.static(__dirname + "/public/"));
 
-  //Create an api
-  app.use("/api", require("./worldNewsUrls.js"));
+  //Create routing
+  app.use("/", require("./worldNewsUrls.js"));
 
   //Handle Single Page Application
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html/"));
