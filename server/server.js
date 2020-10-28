@@ -18,13 +18,18 @@ app.listen(port, () => {
 
 app.use("/", require("./worldNewsUrls.js"));
 
-//Handle productionnpm fund
+//Handle production
 if (process.env.NODE_ENV === "production") {
   console.log("handlethis");
   //Static folder
   app.use(express.static(__dirname, +"/public/"));
 
   // app.use(express.static(path.join(__dirname, "server", "public")));
+
+  // const path = require("path");
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "server", "public", "index.html"));
+  // });
 
   //Handle Single Page Application
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
