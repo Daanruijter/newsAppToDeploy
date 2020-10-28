@@ -11,7 +11,7 @@ const fetchMethod = require("node-fetch");
 const fs = require("fs");
 // const xml2js = require("xml2js");
 
-router.post("/", (req, res) => {
+router.post("/api", (req, res) => {
   const url = req.body.fetchUrl;
 
   //fetch the data from the NewsAPI based on the user query that comes from the front-end
