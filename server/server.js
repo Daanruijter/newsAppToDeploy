@@ -3,7 +3,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
@@ -18,20 +17,14 @@ if (process.env.NODE_ENV === "production") {
   //Static folder
   app.use(express.static(__dirname + "/public/"));
 
-  app.use("/", require("./worldNewsUrls.js"));
-  // app.use(serveStatic(path.join(__dirname, "/public")));
-
-  // app.use(express.static(path.join(__dirname, "server", "public")));
-
-  // const path = require("path");
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "server", "public", "index.html"));
-  // });
+  //Create an api
+  app.use("/api", require("./worldNewsUrls.js"));
 
   //Handle Single Page Application
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html/"));
 }
 
+//Listen to the port
 app.listen(port, () => {
   console.log("Server is running on " + port + "port");
 });
