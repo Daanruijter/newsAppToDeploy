@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
   app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
 }
 
-//Connect to MongoDB
+//Connect to MongoDB (maybe using this Mongo connection later on)
 const db =
   "mongodb+srv://dr:sSXGDQnstqEWcLHx@cluster0-4ie2c.mongodb.net/test?retryWrites=true&w=majority";
 
