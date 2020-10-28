@@ -11,14 +11,13 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/", require("./worldNewsUrls.js"));
-
 //Handle production
 if (process.env.NODE_ENV === "production") {
   console.log("handslethis");
   //Static folder
   app.use(express.static(__dirname, +"/public/"));
 
+  app.use("/", require("./worldNewsUrls.js"));
   // app.use(serveStatic(path.join(__dirname, "/public")));
 
   // app.use(express.static(path.join(__dirname, "server", "public")));
