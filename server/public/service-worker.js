@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.97be3ca9a5213070e2a6b0084819895b.js"
+  "/precache-manifest.26529dd04050533bfe0d4a881a023e8a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "worldnews-app"});
