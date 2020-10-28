@@ -22,7 +22,7 @@ app.use("/", require("./worldNewsUrls.js"));
 if (process.env.NODE_ENV === "production") {
   console.log("handslethis");
   //Static folder
-  app.use(express.static(__dirname, +"/public/"));
+  app.use("/", express.static(__dirname, +"/public/"));
 
   // app.use(serveStatic(path.join(__dirname, "/public")));
 
