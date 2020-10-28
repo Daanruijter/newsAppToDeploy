@@ -406,7 +406,7 @@ router.post("/updateXMLSitemap", (req, res) => {
   // Write updated XML string to the sitemap
   if (req.body.XMLDataAndEnvironMentData.environmentData === "production") {
     console.log("WRTIEFILE");
-    fs.writeFile("sitemap.xml", XMLData, (err) => {
+    fs.writeFile("./sitemap.xml", XMLData, (err) => {
       if (err) {
         console.log(err);
         res.send(err);
