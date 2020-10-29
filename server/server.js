@@ -13,7 +13,6 @@ app.use(cors());
 
 //Handle production
 if (process.env.NODE_ENV === "production") {
-  console.log("handslethis");
   //Static folder
   app.use(express.static(__dirname + "/public/"));
 
